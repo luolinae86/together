@@ -1,0 +1,37 @@
+/* component/custom-header/custom-header.wxss */
+@import "../../common.wxss";
+
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px
+}
+.header .header-header {
+  width: 100%;
+  height: 44rpx;
+  display: flex;
+}
+.header .header-header .header-header-left {
+  width: 100rpx;
+  height: 100%;
+  display: flex;
+  align-items: center
+}
+
+.header .header-header .header-header-left image {
+  width: 44rpx;
+  height: 44rpx;
+  margin-left: 30rpx
+}
+.header .header-header .header-header-center {
+  width: calc(100% - 200rpx);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+.header .header-header .header-header-center text{
+  font-size: 33rpx;
+  font-weight: 480
+}

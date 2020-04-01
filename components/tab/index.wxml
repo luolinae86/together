@@ -1,0 +1,69 @@
+
+
+<cover-view bindtap="tap_to_hide" wx:if="{{isShowOP}}"  class="op-bg"></cover-view>
+<cover-view  wx:if="{{isShowOP}}" class="op-view flex_left_center" >
+
+  <cover-view class="op-item" bindtap="tap_to_op0"  style="left:0rpx;top:0rpx;">
+    <cover-view style="width:100%;height:65%" class="flex_center_bottom">
+      <cover-view class="op-item-bg flex_center_center" style="background-color:#D4351B">
+        
+        <cover-image style="width: 36rpx;height: 52rpx;" src="../../img/item_img1.png"></cover-image>
+      </cover-view>
+    </cover-view>
+    <cover-view class="op-item-text">我需要</cover-view>
+    
+  </cover-view>
+
+  <cover-view class="op-item " bindtap="tap_to_op1" style="left:33%;top:0rpx;">
+    <cover-view style="width:100%;height:65%" class="flex_center_bottom">
+      <cover-view class="op-item-bg flex_center_center" style="background-color:#3373BE">
+        <cover-image style="width: 43.5rpx;height: 43.5rpx;" src="../../img/item_img2.png"></cover-image>
+      </cover-view>
+    </cover-view>
+    <cover-view class="op-item-text">我提供</cover-view>
+  </cover-view>
+
+  <cover-view class="op-item " bindtap="tap_to_op2" style="left:66%;top:0rpx;">
+    <cover-view style="width:100%;height:65%" class="flex_center_bottom">
+      <cover-view class="op-item-bg flex_center_center" style="background-color:#AC46B3">
+        <cover-image style="width: 32rpx;height: 40rpx;" src="../../img/item_img3.png"></cover-image>
+      </cover-view>
+    </cover-view>
+    <cover-view class="op-item-text">报平安</cover-view>
+  </cover-view>
+</cover-view>
+
+<cover-view wx:if="{{isShowOP && is_show_phone_btn}}" class="phone_tap_view">
+  <button plain="{{true}}" bindgetphonenumber="bindgetphonenumber" open-type="getPhoneNumber"></button>
+</cover-view>
+
+
+<view class="bottomview flex_left_center" >
+  <view class="tab_item">
+    <view bindtap="tap_to_tab0" class="tab_item_sub"  style="margin-left:100rpx;">
+      <view class="flex_center_center"> 
+         <image  style="width:48rpx;height:48rpx;"src="{{items[0].img}}"></image>
+      </view>
+      <view style="text-align:center;font-size:24rpx;margin-top:8rpx;color:{{items[0].color}}">
+        发现
+      </view>
+    </view>
+  </view>
+  <view class="tab_item" style="margin-left:136rpx;">
+    <view bindtap="tap_to_tab1" class="tab_item_sub"  style="margin-left:calc(100% - 160rpx);">
+      <view class="flex_center_center"> 
+         <image  style="width:40rpx;height:48rpx;" src="{{items[1].img}}"></image>
+      </view>
+      <view  style="text-align:center;font-size:24rpx;margin-top:8rpx;color:{{items[1].color}}">
+        我的
+      </view>
+    </view>
+  </view>
+    
+</view>
+<cover-view class="add">
+  <cover-image bindtap="tap_to_add" src="../../img/add.png" ></cover-image>
+  <button plain="{{true}}" bindgetuserinfo="bindgetuserinfo" wx:if="{{is_show_nick_btn}}" open-type="getUserInfo"  > </button>
+</cover-view>
+
+

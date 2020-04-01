@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "spe-tab":"../../components/tab/index",
+    "point-msg": "../../components/msg/index"
+  },
+  "navigationBarTitleText": "map"
+}

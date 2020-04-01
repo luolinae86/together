@@ -1,0 +1,65 @@
+<cover-view  wx:if="{{is_show_point_msg}}" class="point_msg_view" style="bottom:{{alertBottom}}rpx;">
+  <cover-view class="msg_view_verify flex_left_center">
+    <cover-view style="width:70%;height:100%" class="flex_left_top">
+      <!-- <cover-view style="background-color:#1E70B8;color:white;font-size:24rpx;padding:8rpx 10rpx;margin-left:20rpx;">信息已核实</cover-view> -->
+    </cover-view>
+    <cover-view  bindtap="tap_to_close" style="width:30%;height:100%" class="flex_right_center">
+      <cover-image  style="width:14rpx;height:14rpx;margin-right:20rpx;padding:20rpx 0rpx 20rpx 20rpx;" src="../../img/Cancel.png"></cover-image>
+    </cover-view>
+  </cover-view>
+
+  <cover-view style="width:100%;padding:0rpx 30rpx 30rpx 40rpx" class="flex_left_center">
+    <cover-view>
+      <cover-image style="width:112rpx;height:112rpx;border-radius:112rpx" src="{{data.customer.head_url}}"></cover-image>
+    </cover-view>
+    <cover-view style="margin-left:30rpx;" >
+      <cover-view style="font-size:36rpx;font-weight:500;">
+        {{data.customer.nick_name}}
+      </cover-view>
+      <cover-view wx:if="{{data.topic_type == provide_help}}" class="flex_left_center" style="margin-top:5rpx;">
+        <cover-image style="width:28rpx;height:26rpx;" src="../../img/heart.png"></cover-image>
+        <cover-view style="font-size:24rpx;color:#666666">
+          提供帮助1次
+        </cover-view>
+      </cover-view>
+    </cover-view>
+  </cover-view>
+
+  <cover-view style="width:100%;padding-bottom:20rpx; padding-left:40rpx;padding-right:40rpx;" class="flex_left_center"> 
+    <cover-view wx:if="{{data.topic_type == 'need_help'}}" style="width:25%;font-size:28rpx;font-weight:500">
+      我需要
+    </cover-view>
+    <cover-view wx:if="{{data.topic_type == 'provide_help'}}" style="width:25%;font-size:28rpx;font-weight:500">
+      我提供
+    </cover-view>
+    <cover-view wx:if="{{data.topic_type == 'report_safe'}}" style="width:25%;font-size:28rpx;font-weight:500">
+      报平安
+    </cover-view>
+    <cover-view style="width:calc(75% - 80rpx);text-align:right;font-size:24rpx;color:#666666">
+      {{data.created_at}}
+    </cover-view>
+  </cover-view>
+
+  <cover-view style="width:calc(100% - 80rpx);margin-left:40rpx;">
+    <cover-view style="height:{{data.contentHeight}}"  class="content">{{data.content}}</cover-view>
+  </cover-view>
+
+  <cover-view wx:if="{{data.isShowBtn && data.status != 'done'}}" style="width:100%; margin-top:20rpx;" class="flex_center_center">
+    <cover-view style="border-radius:10rpx;border:1px solid #1E70B8;width:160rpx;height:50rpx;" class="flex_center_center">
+      <cover-view wx:if="{{data.topic_type == 'need_help'}}" style="font-size:28rpx;color:#1E70B8;">等待解决</cover-view>
+      <cover-view wx:if="{{data.topic_type == 'provide_help'}}" style="font-size:28rpx;color:#1E70B8;">未耗尽</cover-view>
+    </cover-view>
+  </cover-view>
+
+  <cover-view wx:if="{{data.isShowBtn && data.status == 'done'}}" style="width:100%; margin-top:20rpx;" class="flex_center_center">
+    <cover-view style="border-radius:10rpx;border:1px solid #cccccc;background-color:#eeeeee;width:160rpx;height:50rpx;" class="flex_center_center">
+      <cover-view wx:if="{{data.topic_type == 'need_help'}}" style="font-size:28rpx;color:#aaaaaa;">已解决</cover-view>
+      <cover-view wx:if="{{data.topic_type == 'provide_help'}}" style="font-size:28rpx;color:#aaaaaa;">已耗尽</cover-view>
+    </cover-view>
+  </cover-view>
+
+</cover-view>
+
+<cover-view wx:if="{{is_show_point_msg}}" class="arr flex_center_top"  style="bottom:{{arrBottom}}rpx;">
+  <cover-image style="width:40rpx;height:40rpx;" src="../../img/arr.png"></cover-image>
+</cover-view>

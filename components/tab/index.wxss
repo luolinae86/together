@@ -1,0 +1,92 @@
+@import "../../common.wxss";
+/* components/tab/index.wxss */
+.op-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 166rpx);
+  background-color:black;
+  opacity: 0.6
+}
+
+.op-view {
+  position: absolute;
+  bottom: calc(166rpx + 40rpx);
+  width: calc(100%  - 80rpx);
+  left: 40rpx;
+  height: 200rpx;
+  background-color: white
+
+}
+.phone_tap_view {
+  position: absolute;
+  bottom: calc(166rpx + 40rpx);
+  width: calc(100%  - 80rpx);
+  left: 40rpx;
+  height: 200rpx;
+
+}
+.phone_tap_view button{
+  opacity: 0;
+  width: 100%;
+  padding-top: 100rpx;
+  padding-bottom: 100rpx;
+  border: none
+}
+
+.op-view .op-item {
+  height: 100%;
+  width: 33%;
+}
+
+
+.op-view .op-item .op-item-bg{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 90rpx;
+  margin-bottom: 10rpx;
+  position: static
+}
+.op-view .op-item .op-item-text{
+  width: 100%;
+  text-align: center;
+  margin-top: 5rpx;
+}
+.bottomview {
+  position:absolute;
+  bottom:0;left:0; 
+  width:100%;height:166rpx; 
+  background-color:white;
+  box-shadow: 0px -1px 10px rgba(0,0,0,0.2)
+}
+
+.bottomview .tab_item {
+  width: calc(50% - 68rpx);
+  height: 100%;
+  
+}
+.bottomview .tab_item .tab_item_sub{
+  width: 60rpx;
+
+  margin-top: 22rpx;
+}
+
+
+.add {
+  position: absolute;
+  width: 136rpx;
+  height: 136rpx;
+  bottom: 50rpx;
+  left: calc(50% - 68rpx);
+  z-index: 100;
+}
+
+.add button {
+
+  position:absolute;
+  left: 0rpx;
+  top: 0rpx;
+  padding: 66rpx;
+  border: none
+}

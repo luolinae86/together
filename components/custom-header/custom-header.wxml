@@ -1,0 +1,14 @@
+<!-- 自定义标题 -->
+<view class="header" style='height:{{barH}}'>
+  <view style='backgrond-color:red; width:100%;height:{{statusHeight}}'></view>
+  <view class='header-header' style='height:44px'>
+    <view wx:if="{{!show_back}}" class='header-header-left'>
+    </view>
+    <view  wx:if="{{show_back}}" bindtap='_pressToLeft' class='header-header-left'>
+      <image src='{{left_img}}'></image>
+    </view>
+    <view class='header-header-center'>
+      <text>{{title}}</text>
+    </view>
+  </view>
+</view>

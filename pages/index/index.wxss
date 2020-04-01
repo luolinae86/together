@@ -1,0 +1,75 @@
+
+
+
+.tab2-header {
+  width: 100%;
+  /* padding: 0 40rpx; */
+  padding-top: 74rpx;
+  height: 268rpx;
+  background-color: #1E70B8
+}
+
+.tab2-header-msg {
+  height: 200rpx;
+  width: calc(100% - 80rpx);
+  margin-left: 40rpx;
+  border-radius: 16rpx;
+  margin-top: -150rpx;
+  
+}
+
+.tab2-items {
+  height: 242rpx;
+  width: calc(100% - 80rpx);
+  margin-left: 40rpx;
+  margin-top: 20rpx;
+  border-radius: 16rpx;
+}
+
+.tab2-items .tab2-items-item {
+  width: 33%;
+  height: 100%;
+  border-radius: 16rpx
+}
+.tab2-items .tab2-items-item .tab2-items-item-center {
+  width: 100rpx;
+}
+.tab2-items .tab2-items-item .tab2-items-item-center .tab2-items-item-center-bg{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 90rpx;
+}
+.tab2-items .tab2-items-item .tab2-items-item-center .tab2-items-item-center-text{
+  width: 100%;
+  margin-top: 20rpx;
+}
+.tab2-items .tab2-items-item .tab2-items-item-center .tab2-items-item-center-text text {
+  font-size: 28rpx;
+}
+
+.tab2-cells {
+  height: 276rpx;
+  padding-top: 5rpx;
+  padding-bottom: 27rpx;
+  width: calc(100% - 80rpx);
+  margin-left: 40rpx;
+  margin-top: 20rpx;
+  border-radius: 16rpx;
+}
+.tab2-cells .tab2-cells-cell {
+  height: 70rpx;
+  width: 100%;
+  padding-bottom: 1px;
+  margin-top: 20rpx;
+}
+
+.tab2-intro {
+  width:100%;
+  margin-top:50rpx;
+  background-color: #f6f6f6
+}
+.tab2-intro text {
+  font-size: 28rpx;
+  color:#999999
+}
+

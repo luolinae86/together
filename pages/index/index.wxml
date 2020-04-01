@@ -1,0 +1,137 @@
+
+<block wx:if="{{tab_indx == 0}}">
+  <view  style="height:148rpx;width:100%;background-color:#1E70B8;padding-top:74rpx">
+    <image src="../../img/logoLabel.png" style="width:144rpx;height:75rpx;margin-left:34rpx"></image>
+    <view class="flex_left_center" style="width:100%;background-color:#1E70B8">
+      <view style="background-color:#1E70B8;width:30%;" class="flex_left_top">
+        <text style="margin-left:34rpx;color:white;opacity: 0.8;margin-top:-10rpx;">together.today</text>
+      </view>
+      <view style="background-color:#1E70B8;width:70%;" class="flex_right_top">
+        <text style="margin-right:34rpx;color:white;font-size:24rpx;opacity: 0.8">{{tips}}</text>
+      </view>
+    </view>
+  </view>
+  <view style="width:100%;height:calc(100% - 212rpx - 166rpx)">
+    <map  
+      id="myMap"
+      style="width: 100%; height:100%"
+      latitude="{{latitude}}"
+      longitude="{{longitude}}"
+      scale="{{scale}}"
+      show-compass="true"
+      markers="{{markers}}"
+      bindpoitap="poitap"
+      bindmarkertap="markertap"
+      show-location="true"
+      show-scale="true"
+      bindregionchange="regionchange"
+      bindtap="tap_to_map"
+    >
+    </map>
+  </view>
+</block>
+<block wx:if="{{tab_indx == 1}}">
+  <scroll-view scroll-y="{{true}}" style="background-color:#f6f6f6;height:calc(100% - 166rpx)">
+    <view class="tab2-header">
+      <view style="width:100%;background-color:#1E70B8" class="flex_left_center">
+        <image style="width:120rpx;height:65rpx;margin-left:38rpx;" src="../../img/logoLabel.png"></image>
+        <view class="flex_left_center" style="margin-left:20rpx;background-color:#1E70B8">
+          <text style="font-size:24rpx;opacity: 0.8;color:white">togther.today\n2020年新冠疫情期海外华人互助平台</text>
+        </view>
+      </view>
+    </view>
+    <view class="tab2-header-msg flex_left_center">
+      <image style="width:112rpx;height:112rpx;border-radius:112rpx;margin-left:44rpx" src="{{account.head_url?account.head_url:'../../img/ss.png'}}"> </image>
+      <text style="font-size:36rpx;font-weight:500;margin-left:30rpx;">{{account.nick_name?account.nick_name:'请授权'}}</text>
+    </view>
+    <view class="tab2-items flex_left_center">
+
+      <view bindtap="tap_to_listpage" data-idx="{{0}}" class="tab2-items-item flex_center_center">
+        <view class="tab2-items-item-center">
+          <view style="background-color:#D4351B" class="tab2-items-item-center-bg flex_center_center">
+            <image style="width:36rpx;height:52rpx"  src="../../img/item_img1.png"></image>
+          </view>
+          <view class="tab2-items-item-center-text flex_center_center">
+            <text>我需要</text>
+          </view>
+        </view>
+      </view>
+
+      <view bindtap="tap_to_listpage" data-idx="{{1}}" class="tab2-items-item flex_center_center">
+        <view class="tab2-items-item-center">
+          <view style="background-color:#3373BE" class="tab2-items-item-center-bg flex_center_center">
+            <image style="width:43.5rpx;height:43.5rpx"  src="../../img/item_img2.png"></image>
+          </view>
+          <view class="tab2-items-item-center-text flex_center_center">
+            <text>我提供</text>
+          </view>
+        </view>
+      </view>
+
+      <view bindtap="tap_to_listpage" data-idx="{{2}}" class="tab2-items-item flex_center_center">
+        <view class="tab2-items-item-center">
+          <view style="background-color:#AC46B3" class="tab2-items-item-center-bg flex_center_center">
+            <image style="width:31.5rpx;height:39rpx"  src="../../img/item_img3.png"></image>
+          </view>
+          <view class="tab2-items-item-center-text flex_center_center">
+            <text>报平安</text>
+          </view>
+        </view>
+      </view>
+
+    </view>
+    <view class="tab2-cells">
+
+      <view bindtap="tap_to_cell" data-idx="{{0}}" class="tab2-cells-cell flex_left_center">
+        <view style="width:116rpx;height:100%;" class="flex_center_center">
+          <image style="width:32rpx;height:32rpx;" src="../../img/cell1.png"></image>
+        </view>
+        <view class="flex_left_center" style="width:calc(100% - 116rpx);height:100%;border-bottom:1px solid #eeeeee">
+          <view class="flex_left_center" style="width:60%;height:100%;">
+            <text style="color:#333333">帮助</text>
+          </view>
+          <view class="flex_right_center" style="width:40%;height:100%;">
+            <image style="width:20rpx; height:37rpx;margin-right:20rpx;" src="../../img/arr_right.png"></image>
+          </view>
+        </view>
+      </view>
+
+      <view bindtap="tap_to_cell" data-idx="{{1}}"  class="tab2-cells-cell flex_left_center">
+        <view style="width:116rpx;height:100%;" class="flex_center_center">
+          <image style="width:30rpx;height:32rpx;" src="../../img/cell2.png"></image>
+        </view>
+        <view class="flex_left_center" style="width:calc(100% - 116rpx);height:100%;border-bottom:1px solid #eeeeee">
+          <view class="flex_left_center" style="width:60%;height:100%;">
+            <text style="color:#333333">关于我们</text>
+          </view>
+          <view class="flex_right_center" style="width:40%;height:100%;">
+            <image style="width:20rpx; height:37rpx;margin-right:20rpx;" src="../../img/arr_right.png"></image>
+          </view>
+        </view>
+      </view>
+
+
+      <view bindtap="tap_to_cell" data-idx="{{2}}" class="tab2-cells-cell flex_left_center">
+        <view style="width:116rpx;height:100%;" class="flex_center_center">
+          <image style="width:24rpx;height:32rpx;" src="../../img/cell3.png"></image>
+        </view>
+        <view class="flex_left_center" style="width:calc(100% - 116rpx);height:100%;border-bottom:1px solid #eeeeee">
+          <view class="flex_left_center" style="width:60%;height:100%;">
+            <text style="color:#333333">用户反馈</text>
+          </view>
+          <view class="flex_right_center" style="width:40%;height:100%;">
+            <image style="width:20rpx; height:37rpx;margin-right:20rpx;" src="../../img/arr_right.png"></image>
+          </view>
+        </view>
+      </view>
+
+    </view>
+    <view class="tab2-intro flex_center_center">
+      <text>xxx公司提供技术支持</text>
+    </view>
+  </scroll-view>
+</block>
+
+<point-msg data="{{point_data}}" is_show_point_msg="{{is_show_point_msg}}" arrBottom="{{arrBottom}}" alertBottom="{{alertBottom}}"></point-msg>
+
+<spe-tab is_show_nick_btn="{{is_show_nick_btn}}" is_show_phone_btn="{{is_show_phone_btn}}" bind:op_tab_event="op_tab_event" bind:op_event="op_event"></spe-tab>

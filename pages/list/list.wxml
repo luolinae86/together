@@ -1,0 +1,43 @@
+
+
+<custom-header title="{{items[index].title}}">
+</custom-header>
+
+
+<scroll-view  wx:if="{{array.length > 0}}" class="content" scroll-y="true" style="top:calc({{barH}} + 20rpx);bottom:0"> 
+  <block wx:key="ss1" wx:for="{{array}}" wx:for-index="idx" wx:for-item="itemName">
+    <view class="cell flex_left_top">
+      <view style="width:calc(70% - 40rpx);">
+        <view> 
+          <text style="font-size:24rpx;color:#666666">{{itemName.created_at}}</text>
+        </view>
+        <view style="width:100%;margin-top:20rpx;">
+          <text style="font-size:24rpx;color:#333333;">{{itemName.content}}</text>
+        </view>
+      </view>
+
+      <block wx:if="{{index == 0 || index == 1}}">
+      <view bindtap="tap_to_op" data-item="{{itemName}}" wx:if="{{itemName.status == 'published'}}" style="width:calc(30% - 40rpx);" class="flex_right_top">
+        <view style="width:140rpx;height:50rpx;border:1px solid #1E70B8;border-radius:10rpx;" class="flex_center_center">
+          
+          <text wx:if="{{index == 0}}" style="font-size:24rpx;color:#1E70B8">确认解决</text>
+          <text wx:if="{{index == 1}}" style="font-size:24rpx;color:#1E70B8">未耗尽</text>
+        </view>
+      </view>
+
+      <view bindtap="tap_to_op" data-item="{{itemName}}" wx:if="{{itemName.status != 'published'}}" style="width:calc(30% - 40rpx);" class="flex_right_top">
+        <view style="width:140rpx;height:50rpx;border:1px solid #cccccc;border-radius:10rpx;background-color:#eeeeee" class="flex_center_center">
+          <text wx:if="{{index == 0}}" style="font-size:24rpx;color:#aaaaaa">已解决</text>
+          <text wx:if="{{index == 1}}" style="font-size:24rpx;color:#aaaaaa">已耗尽</text>
+        </view>
+      </view>
+      </block>
+    </view>
+  </block>
+</scroll-view>
+
+<view wx:if="{{array.length <= 0}}"  class="content flex_center_center" style='top:calc({{barH}} + 20rpx);bottom:0;background-color:#f6f6f6' >
+  <text style="color:#e5e5e5">暂无数据</text>
+</view>
+
+

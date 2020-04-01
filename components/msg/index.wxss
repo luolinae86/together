@@ -1,0 +1,37 @@
+/* components/msg/index.wxss */
+@import "../../common.wxss";
+
+
+.point_msg_view {
+  position:absolute; 
+  left:114rpx; 
+  width:calc(100% - 228rpx); 
+  background-color:white;
+  border-radius:10rpx;
+  padding-bottom: 40rpx;
+}
+
+.msg_view_verify {
+  width: 100%;
+}
+
+.content {
+  width:calc(100% - 40rpx);
+  border-radius:8rpx;
+  backround-color:#F7FAFD;
+  padding:19rpx;
+  border:1px solid #A8B6C1;
+  font-size:24rpx;
+  color:#333333;
+  overflow-y:scroll;
+  white-space:normal;
+  line-height: 40rpx;
+  text-align: left
+}
+
+
+.arr {
+  width: 100%;
+  position: absolute;
+  left: 0rpx;
+}

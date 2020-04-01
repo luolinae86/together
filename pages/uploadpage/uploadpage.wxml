@@ -1,0 +1,56 @@
+<custom-header title="{{items[index].title}}">
+</custom-header>
+
+<scroll-view wx:if="{{!isDefault}}" class="content" scroll-y="true" style="top:calc({{barH}} + 20rpx);bottom:0"> 
+  <view style="background-color:white;padding: 40rpx">
+    <view style="padding-bottom:30rpx;"> 
+      <text style="font-size:32rpx;font-weight:500">{{items[index].sub_title}}</text>
+    </view>
+    <view style="width:clac(100% - 40rpx);border-radius:5rpx;border:1px solid #e5e5e5;padding:20rpx;">
+      <view style="height:320rpx;">
+        <textarea show-confirm-bar="{{false}}" bindinput="textchanged" style="width:100%;background-color:red" auto-focus="true" style="font-size:28rpx;"  maxlength="200" placeholder="{{items[index].placeholder}}"></textarea>
+      </view>
+      <view style="height:40rpx;width:100%" class="flex_right_center">
+        <text style="color:#999999">{{wordscount}}</text>
+      </view>
+    </view>
+  </view>
+
+
+  <!-- <view style="width:100%;height:100rpx;margin-top:20rpx;" class="flex_left_center">
+    <view style="width:calc(50% - 40rpx);height:100%;margin-left:40rpx;" class="flex_left_center">
+        <text style="font-size:32rpx;color:#333333">联系方式</text>
+      </view>
+      <view style="width:calc(50% - 40rpx);height:100%" class="flex_right_center">
+        <switch  bindchange="switch_phone_change"/>
+      </view>
+  </view> -->
+  <view style="width:100%;padding:10rpx 40rpx;margin-top:20rpx;">
+    <view style="height:80rpx;width:100%" class="flex_left_center">
+      <text style="font-size:32rpx;font-weight:500">联系方式           </text>
+    </view>
+    <view style="height:80rpx;width:calc(100% - 80rpx)" >
+      <input  bindinput="account_input"  style="width:100%;padding-top:20rpx;" maxlength="100" placeholder="请输入社交账号如：微信xxxxxxxx" value="{{account_input}}"></input>
+    </view>
+  </view>
+  
+  <view wx:if="{{index == 0}}" style="width:100%;padding:10rpx 40rpx;margin-top:20rpx;">
+    <view style="height:80rpx;width:100%" class="flex_left_center">
+      <text style="font-size:32rpx;font-weight:500">紧迫程度            </text>
+    </view>
+    <view style="height:80rpx;width:100%" class="flex_left_center">
+      <view style="width:calc(50% - 40rpx);height:100%" class="flex_left_center">
+        <text style="font-size:32rpx;color:#333333">紧急</text>
+      </view>
+      <view style="width:calc(50% - 40rpx);height:100%" class="flex_right_center">
+        <switch  bindchange="switch1Change"/>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{index == 0}}" style="width:100%;padding:20rpx 40rpx;background-color:#f6f6f6">
+    <text style="font-size:24rpx;color:#666666">紧急状态默认关闭，一旦开启，首页重点展示</text>
+  </view>
+  <view bindtap="tap_to_upload" style="margin-left:60rpx;width:calc(100% - 120rpx);height:80rpx;margin-top:40rpx;border-radius:80rpx;background-color:#1E70B8" class="flex_center_center">
+    <text style="color:white;font-size:36rpx;">提交</text>
+  </view>
+</scroll-view>

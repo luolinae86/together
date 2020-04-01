@@ -1,0 +1,14 @@
+/* pages/list/list.wxss */
+.content {
+  width: 100%;
+  position: fixed;
+  left: 0px;
+
+}
+
+.cell{
+  width: 100%;
+  padding: 20rpx 40rpx;
+  padding-bottom: 30rpx;
+  margin-top: 20rpx;
+}
