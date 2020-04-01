@@ -19,19 +19,19 @@ Page({
       {
         title: "我需要",
         sub_title: "求助详情",
-        placeholder:"填写需要帮助的详细内容",
+        placeholder:"填写需要帮助的详细内容，别的用户能看到这些信息。\n\n请注意保护好隐私。\n请勿泄露电话号码等联系方式。\n请遵循公益互助的原则，任何广告、交易的行为将被视为违规，系统有权删除您提交的需求\n",
         type:"need_help"
       },
       {
         title: "我提供",
         sub_title: "提供帮助详情",
-        placeholder: "填写你能提供帮助的详细内容",
+        placeholder: "填写您能提供帮助的详细内容，别的用户能看到这些信息。\n\n请注意保护好隐私。\n请勿泄露电话号码等联系方式\n请遵循公益互助的原则，任何广告、交易的行为将被视为违规，系统有权删除您提交的信息\n",
         type: "provide_help"
       },
       {
         title: "报平安",
         sub_title: "平安详情",
-        placeholder: "填写报平安的详细内容",
+        placeholder: "填写报平安的内容,别的用户能看到这些信息。\n\n请注意保护好隐私。\n请勿泄露电话号码等联系方式\n请遵循公益互助的原则，任何广告、交易的行为将被视为违规，系统有权删除您提交的信息\n",
         type: "report_safe"
       }
     ],
@@ -86,9 +86,10 @@ Page({
       is_urgent: this.data.ischecked,
       content: content,
       topic_type: type
-    }
-
-    var account_input = this.data.account_input;
+    }	
+	
+	var account_input = "N/A";
+    /*var account_input = this.data.account_input;
     if(this.data.index == 0 || this.data.index == 1){
       //需要
       if(account_input.length <= 0){
@@ -103,7 +104,7 @@ Page({
     if(account_input.length > 0) {
       data.social_account = account_input;
       data.content = content+"\n社交账号："+account_input;
-    }
+    }*/
     manager.checkWxAuth({
       type: 'location',
       success: function () {

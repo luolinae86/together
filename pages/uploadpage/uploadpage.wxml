@@ -25,6 +25,7 @@
         <switch  bindchange="switch_phone_change"/>
       </view>
   </view> -->
+  <!--
   <view style="width:100%;padding:10rpx 40rpx;margin-top:20rpx;">
     <view style="height:80rpx;width:100%" class="flex_left_center">
       <text style="font-size:32rpx;font-weight:500">联系方式           </text>
@@ -33,6 +34,7 @@
       <input  bindinput="account_input"  style="width:100%;padding-top:20rpx;" maxlength="100" placeholder="请输入社交账号如：微信xxxxxxxx" value="{{account_input}}"></input>
     </view>
   </view>
+  -->
   
   <view wx:if="{{index == 0}}" style="width:100%;padding:10rpx 40rpx;margin-top:20rpx;">
     <view style="height:80rpx;width:100%" class="flex_left_center">
