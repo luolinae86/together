@@ -353,10 +353,12 @@ Page({
       //授权个人信息
       return;
     }
+    /*
     if(!account.phone || account.phone.length <= 0){
       //授权手机信息
       return;
     }
+    */
 
     wx.navigateTo({
       url: '../list/list?idx=' + e.currentTarget.dataset.idx,

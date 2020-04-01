@@ -5,6 +5,7 @@ App({
     var barheight = parseInt(wx.getSystemInfoSync()["statusBarHeight"]);
     log.log(wx.getSystemInfoSync())
     this.globalData.statusBarheight = barheight;
+    
 
 
     // 登录
