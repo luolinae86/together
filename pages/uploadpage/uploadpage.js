@@ -88,7 +88,8 @@ Page({
       topic_type: type
     }	
 	
-	var account_input = "N/A";
+   var account_input = "N/A";
+   data.social_account = account_input;
     /*var account_input = this.data.account_input;
     if(this.data.index == 0 || this.data.index == 1){
       //需要
