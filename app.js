@@ -6,7 +6,14 @@ App({
     log.log(wx.getSystemInfoSync())
     this.globalData.statusBarheight = barheight;
     
-
+    // Yuhua 2020-04-01 追加 开始
+    //从二维码中获得 用户id 
+   
+    var userId  = decodeURIComponent(options.userid);//参数二维码传递过来的参数
+    log.log(options);
+    this.globalData.userId=userId;
+    log.log(userId)
+    // Yuhua 2020-04-01 追加 结束
 
     // 登录
     // wx.login({

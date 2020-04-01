@@ -11,6 +11,7 @@ Page({
    */
   data: {
     statusHeight: getApp().globalData.statusBarheight + "px",
+    userId:getApp().globalData.userId,
     barH: getApp().globalData.statusBarheight + 44 + 'px',
     textareavalue:"",
     wordscount:"0/200",

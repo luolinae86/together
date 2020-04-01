@@ -354,6 +354,8 @@ Page({
       return;
     }
     /*
+    * Yuhua 2020-04-01 移除 手机信息授权
+    *
     if(!account.phone || account.phone.length <= 0){
       //授权手机信息
       return;

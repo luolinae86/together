@@ -5,6 +5,7 @@
   <view style="background-color:white;padding: 40rpx">
     <view style="padding-bottom:30rpx;"> 
       <text style="font-size:32rpx;font-weight:500">{{items[index].sub_title}}</text>
+      <text style="font-size:32rpx;font-weight:500">{{userId}}</text>
     </view>
     <view style="width:clac(100% - 40rpx);border-radius:5rpx;border:1px solid #e5e5e5;padding:20rpx;">
       <view style="height:320rpx;">
