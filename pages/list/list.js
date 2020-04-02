@@ -32,12 +32,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
     this.setData({
       index: parseInt(options.idx)
     })
     
-    this.getarrays();
+  
   },
   getarrays:function(){
     var that = this;
@@ -57,6 +56,20 @@ Page({
     })
   },
   anyresult:function(array){
+    for(var i = 0 ; i < array.length;i++){
+      var item = array[i];
+      item.btnArray = [{
+        src: '../../img/edit.png', // icon的路径
+        data:{
+          idx:i
+        }
+      }, {
+        src: '../../img/delete.png', // icon的路径
+          data: {
+            idx: i
+          }
+      }]
+    }
     this.setData({
       array:array
     })
@@ -77,6 +90,39 @@ Page({
 
     })
   },
+  slideButtonTap:function(e){
+    var index = e.detail.index; 
+    var that = this;
+    var item = this.data.array[e.detail.data.idx];
+    if(index == 0){
+      getApp().globalData.item = item;
+      wx.navigateTo({
+        url: '../uploadpage/uploadpage?idx=' + this.data.index + "&uuid=" + item.uuid ,
+      })
+    }
+    if(index == 1){
+      wx.showModal({
+        title: '提示',
+        content: '是否要删除？',
+        success:res=>{
+          if(res.confirm){
+            wx.showLoading({
+              title: '',
+            })
+            //删除
+            mnRequest.topicdelete({
+              data:{
+                topic_uuid:item.uuid
+              },
+              success:res=>{
+                that.getarrays()
+              }
+            })
+          }
+        }
+      })
+    }
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -88,7 +134,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getarrays();
   },
 
   /**

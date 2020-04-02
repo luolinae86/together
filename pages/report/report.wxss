@@ -1,0 +1,22 @@
+@import "../../weui-miniprogram/weui.wxss";
+
+.content {
+  width: 100%;
+  position: fixed;
+  left: 0px;
+
+}
+
+.item{
+  padding-top: 60rpx;
+
+}
+.weui-cell,
+.weui-check__label
+.weui-cell__hd, {
+  padding-left: 0rpx;
+  border-bottom: none
+}
+.weui-cell {
+  border-bottom: none
+}

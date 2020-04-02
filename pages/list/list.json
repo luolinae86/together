@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "custom-header": "../../components/custom-header/custom-header"
+    "custom-header": "../../components/custom-header/custom-header",
+    "mp-slideview": "../../weui-miniprogram/slideview/slideview"
   }
 }

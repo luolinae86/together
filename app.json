@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/uploadpage/uploadpage",
-    "pages/list/list"
+    "pages/list/list",
+    "pages/report/report"
   ],
   "window": {
     "backgroundTextStyle": "light",

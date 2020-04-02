@@ -44,17 +44,27 @@
     <cover-view style="height:{{data.contentHeight}}"  class="content">{{data.content}}</cover-view>
   </cover-view>
 
-  <cover-view wx:if="{{data.isShowBtn && data.status != 'done'}}" style="width:100%; margin-top:20rpx;" class="flex_center_center">
-    <cover-view style="border-radius:10rpx;border:1px solid #1E70B8;width:160rpx;height:50rpx;" class="flex_center_center">
+  <cover-view wx:if="{{data.isShowBtn && data.status != 'done'}}" style="width:100%; margin-top:20rpx;" class="flex_left_center">
+    <cover-view style="width:calc(50% - 80rpx)"></cover-view>
+    <cover-view wx:if="{{data.topic_type != 'report_safe'}}" style="border-radius:10rpx;border:1px solid #1E70B8;width:160rpx;height:50rpx;" class="flex_center_center">
       <cover-view wx:if="{{data.topic_type == 'need_help'}}" style="font-size:28rpx;color:#1E70B8;">等待解决</cover-view>
       <cover-view wx:if="{{data.topic_type == 'provide_help'}}" style="font-size:28rpx;color:#1E70B8;">未耗尽</cover-view>
     </cover-view>
+    <cover-view wx:if="{{data.topic_type == 'report_safe'}}" style="width:150rpx;"></cover-view>
+    <cover-view style="width:calc(50% - 80rpx)"  class="flex_right_top">
+      <cover-view bindtap="tap_right_alert"  class="right_alert">举报</cover-view>
+    </cover-view>
   </cover-view>
 
-  <cover-view wx:if="{{data.isShowBtn && data.status == 'done'}}" style="width:100%; margin-top:20rpx;" class="flex_center_center">
-    <cover-view style="border-radius:10rpx;border:1px solid #cccccc;background-color:#eeeeee;width:160rpx;height:50rpx;" class="flex_center_center">
+  <cover-view wx:if="{{data.isShowBtn && data.status == 'done'}}" style="width:100%; margin-top:20rpx;" class="flex_left_center">
+    <cover-view style="width:calc(50% - 80rpx)"></cover-view>
+    <cover-view wx:if="{{data.topic_type != 'report_safe'}}" style="border-radius:10rpx;border:1px solid #cccccc;background-color:#eeeeee;width:160rpx;height:50rpx;" class="flex_center_center">
       <cover-view wx:if="{{data.topic_type == 'need_help'}}" style="font-size:28rpx;color:#aaaaaa;">已解决</cover-view>
       <cover-view wx:if="{{data.topic_type == 'provide_help'}}" style="font-size:28rpx;color:#aaaaaa;">已耗尽</cover-view>
+    </cover-view>
+    <cover-view wx:if="{{data.topic_type == 'report_safe'}}" style="width:150rpx;"></cover-view>
+    <cover-view style="width:calc(50% - 80rpx)"  class="flex_right_top">
+      <cover-view bindtap="tap_right_alert" class="right_alert">举报</cover-view>
     </cover-view>
   </cover-view>
 

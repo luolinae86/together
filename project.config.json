@@ -64,9 +64,9 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "pages/index/index",
-					"pathName": "pages/index/index",
+					"id": 1,
+					"name": "pages/report/report",
+					"pathName": "pages/report/report",
 					"query": "userid=1002&method=1",
 					"scene": null
 				}

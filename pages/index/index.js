@@ -241,8 +241,8 @@ Page({
       point_data.contentHeight = "232rpx";
       point_data.isShowBtn = true
     } else {
-      point_data.contentHeight = "308rpx";
-      point_data.isShowBtn = false
+      point_data.contentHeight = "232rpx";
+      point_data.isShowBtn = true
     }
     
 

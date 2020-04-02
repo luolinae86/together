@@ -153,6 +153,33 @@ function config(param){
   dic.name = "config"
   httpRequest('v1/common/config', 'GEt', dic);
 }
+// POST / v1 / topic / delete
+function topicdelete(param) {
+  var account = localstorage.getAccount();
+  var dic = param;
+  dic.data.uuid = account.uuid;
+  dic.isShowFail = false;
+  dic.name = "delete"
+  httpRequest('v1/topic/delete', 'POST', dic);
+}
+// POST / v1 / topic / update
+function topicupdate(param) {
+  var account = localstorage.getAccount();
+  var dic = param;
+  dic.data.uuid = account.uuid;
+  dic.isShowFail = false;
+  dic.name = "update"
+  httpRequest('v1/topic/update', 'POST', dic);
+}
+//POST /v1/topic/complaint
+function topiccomplaint(param) {
+  var account = localstorage.getAccount();
+  var dic = param;
+  dic.data.uuid = account.uuid;
+  dic.isShowFail = false;
+  dic.name = "complaint"
+  httpRequest('v1/topic/complaint', 'POST', dic);
+}
 
 module.exports = {
   register:register,
@@ -162,5 +189,8 @@ module.exports = {
   within_distance: within_distance,
   my_list: my_list,
   done:done,
-  config: config
+  config: config,
+  topicdelete: topicdelete,
+  topicupdate: topicupdate,
+  topiccomplaint: topiccomplaint
 }

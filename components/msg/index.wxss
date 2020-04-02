@@ -35,3 +35,9 @@
   position: absolute;
   left: 0rpx;
 }
+
+.right_alert {
+  font-size: 28rpx;
+  color: #888888;
+  margin-right: 50rpx;
+}

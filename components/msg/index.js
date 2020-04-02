@@ -46,6 +46,14 @@ Component({
       this.setData({
         is_show_point_msg:false
       })
+    },
+    tap_right_alert:function(e){
+      this.setData({
+        is_show_point_msg: false
+      })
+      wx.navigateTo({
+        url: '../../pages/report/report?uuid=' + this.data.data.uuid
+      })
     }
   }
 })

@@ -5,11 +5,11 @@
   <view style="background-color:white;padding: 40rpx">
     <view style="padding-bottom:30rpx;"> 
       <text style="font-size:32rpx;font-weight:500">{{items[index].sub_title}}</text>
-      <text style="font-size:32rpx;font-weight:500">{{userId}}</text>
+      <!-- <text style="font-size:32rpx;font-weight:500">{{userId}}</text> -->
     </view>
     <view style="width:clac(100% - 40rpx);border-radius:5rpx;border:1px solid #e5e5e5;padding:20rpx;">
       <view style="height:320rpx;">
-        <textarea show-confirm-bar="{{false}}" bindinput="textchanged" style="width:100%;background-color:red" auto-focus="true" style="font-size:28rpx;"  maxlength="200" placeholder="{{items[index].placeholder}}"></textarea>
+        <textarea show-confirm-bar="{{false}}" bindinput="textchanged" style="width:100%;background-color:red" auto-focus="true" style="font-size:28rpx;"  maxlength="200" placeholder="{{items[index].placeholder}}" value="{{textareavalue}}"></textarea>
       </view>
       <view style="height:40rpx;width:100%" class="flex_right_center">
         <text style="color:#999999">{{wordscount}}</text>

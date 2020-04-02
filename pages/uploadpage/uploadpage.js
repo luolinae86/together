@@ -34,11 +34,12 @@ Page({
         sub_title: "平安详情",
         placeholder: "填写报平安的内容,别的用户能看到这些信息。\n\n请注意保护好隐私。\n请勿泄露电话号码等联系方式\n请遵循公益互助的原则，任何广告、交易的行为将被视为违规，系统有权删除您提交的信息\n",
         type: "report_safe"
-      }
+      },
+      
     ],
     ischecked:false,
     phone_switch_ischecked:false,
-    account_input:"",
+    account_input:""
   },
 
   /**
@@ -51,19 +52,26 @@ Page({
         account_input:account.social_account
       })
     }
-
-    log.log(options)
     this.setData({
       index: parseInt(options.idx)
     })
+    log.log(options)
+    if(options.uuid){
+      //修改
+      var item = getApp().globalData.item;
+      this.setData({
+        uuid:options.uuid,
+        textareavalue:item.content,
+        ischecked: item.is_urgent,
+        wordscount: item.content.length + "/200"
+      })
+    }
   },
   textchanged:function(e){
     this.setData({
       textareavalue: e.detail.value,
       wordscount:e.detail.value.length+"/200"
     })
-
-
   },
   switch_phone_change:function(e){
     this.setData({
@@ -76,7 +84,7 @@ Page({
     })
   },
   tap_to_upload:function(e){
-
+    var that = this;
     var content = this.data.textareavalue;
     if (content.length <= 0) {
       return;
@@ -118,48 +126,65 @@ Page({
               wx.showLoading({
                 title: '',
               })
-              mnRequest.create({
-                data: data,
-                success: res => {
-
-                  if(account_input.length > 0){
-                    var account = localstorage.getAccount();
-                    account.social_account = account_input
-                    localstorage.setAccount(account)
-                  }
-                  setTimeout(
-                    function () {
-                      wx.showToast({
-                        title: '提交成功',
-                        duration: 1000,
-                        success: res => {
-                        }
-                      })
-                      setTimeout(function () {
-                        wx.navigateBack({
-
+              if(that.data.uuid){
+                data.topic_uuid = that.data.uuid;
+                mnRequest.topicupdate({
+                  data:data,
+                  success:res=>{
+                    setTimeout(
+                      function () {
+                        wx.showToast({
+                          title: '提交成功',
+                          duration: 1000,
+                          success: res => {
+                          }
                         })
-                      }, 1000)
-                    }, 50
-                  )
-                },
-                fail: res => {
-                  wx.showModal({
-                    title: '提示',
-                    content: '提交失败，请重试',
-                    showCancel: false
-                  })
-                }
-              })
+                        setTimeout(function () {
+                          wx.navigateBack({
+
+                          })
+                        }, 1000)
+                      }, 50
+                    )
+                  }
+                })
+              }else{
+                mnRequest.create({
+                  data: data,
+                  success: res => {
+                    setTimeout(
+                      function () {
+                        wx.showToast({
+                          title: '提交成功',
+                          duration: 1000,
+                          success: res => {
+                          }
+                        })
+                        setTimeout(function () {
+                          wx.navigateBack({
+
+                          })
+                        }, 1000)
+                      }, 50
+                    )
+                  },
+                  fail: res => {
+                    wx.showModal({
+                      title: '提示',
+                      content: '提交失败，请重试',
+                      showCancel: false
+                    })
+                  }
+                })
+              }
+              
             }
           }
         })
       }
     })
-    
-    
-    
   },
+
   account_input:function(e){
     var value = e.detail.value
     this.setData({
