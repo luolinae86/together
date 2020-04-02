@@ -8,8 +8,8 @@ const app = getApp()
 
 Page({
   data: {
-    latitude: 23.099994,
-    longitude: 113.324520,
+    latitude: 51.504852,
+    longitude: 0.049596,
     markers:[],
     results:[],
     scale: 16,
