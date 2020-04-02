@@ -125,7 +125,7 @@ Page({
           var data = {
             latitude:res.latitude,
             longitude:res.longitude,
-            distance:50
+            distance:150
           }
           mnRequest.within_distance({
             data: data,
