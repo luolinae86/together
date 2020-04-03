@@ -72,6 +72,7 @@ Page({
     
     var data = {};
     data.content = this.data.textvalue;
+    log.log(this.data);
     data.topic_id = this.data.uuid;
     data.complaint_type = complaint_type
 

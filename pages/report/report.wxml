@@ -3,7 +3,7 @@
 
 
 <scroll-view class="content" scroll-y="true" style="top:calc({{barH}} + 20rpx);bottom:0"> 
-  <view style="border-radius:20rpx;width:calc(100% - 30rpx);margin-left:15rpx;padding:40rpx;">
+  <view style="border-radius:20rpx;width:calc(100% - 50rpx);margin-left:15rpx;padding:40rpx;">
     <view>
       <text style="font-size:32rpx;font-weight:500">你觉得这条信息有什么问题？</text>
     </view>
@@ -17,15 +17,15 @@
       </label>
     </radio-group>
 
-    <view style="padding-top:60rpx;">
+    <view style="padding-top:40rpx;">
       <text style="font-size:28rpx;color:#888888">为了帮助审核人员更快处理，请补充详细信息</text>
     </view>
-    <view style="width:calc(100% - 120rpx);height:300rpx;border:1px solid #b5b5b5;margin-top:40rpx;padding:20rpx;">
+    <view style="width:calc(100% - 120rpx);height:300rpx;border:1px solid #b5b5b5;margin-top:30rpx;padding:20rpx;">
       <textarea placeholder="文本限制400字" maxlength="400" bindinput="input_change" value="{{textvalue}}"></textarea>
     </view>
   </view>
 
-  <view bindtap="tap_to_upload" style="margin-left:60rpx;width:calc(100% - 120rpx);height:80rpx;margin-top:40rpx;border-radius:80rpx;background-color:#1E70B8" class="flex_center_center">
+  <view bindtap="tap_to_upload" style="margin-left:60rpx;width:calc(100% - 120rpx);height:70rpx;margin-top:30rpx;border-radius:80rpx;background-color:#1E70B8" class="flex_center_center">
     <text style="color:white;font-size:36rpx;">提交</text>
   </view>
 </scroll-view>
