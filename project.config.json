@@ -65,10 +65,10 @@
 				},
 				{
 					"id": 1,
-					"name": "pages/report/report",
-					"pathName": "pages/report/report",
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
 					"query": "userid=1002&method=1",
-					"scene": null
+					"scene": 1011
 				}
 			]
 		}

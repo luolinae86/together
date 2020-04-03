@@ -26,20 +26,27 @@ Page({
     tips: ""
   },
   
-  onLoad: function () {
+  onLoad: function (options) {
+    if(options){
+      //各种入口在index页面的参数列表
+      if (options.userid){
+        getApp().globalData.userId = options.userid;
+      }
+      //.....
+    }
     var that = this;
-
     var userId = getApp().globalData.userId;
     //先注册账号信息
     wx.login({
       success:res=>{
         var code = res.code;
-        var datat = {
+        var data = {
           code: code
         };
         if(userId){
           data.pc_id = userId
         }
+        log.log(data)
         mnRequest.register({
           data:data,
           success:res=>{
