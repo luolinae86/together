@@ -52,7 +52,7 @@ Component({
         is_show_point_msg: false
       })
       wx.navigateTo({
-        url: '../../pages/report/report?uuid=' + this.data.data.uuid
+        url: '../../pages/report/report?uuid=' + this.data.data.id
       })
     }
   }

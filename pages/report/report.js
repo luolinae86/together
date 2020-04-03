@@ -81,17 +81,21 @@ Page({
     mnRequest.topiccomplaint({
       data: data,
       success:res=>{
-        wx.showToast({
-          title: '提交成功',
-          duration: 1000,
-          success: res => {
-          }
-        })
-        setTimeout(function () {
-          wx.navigateBack({
+        setTimeout(
+          function () {
+            wx.showToast({
+              title: '提交成功',
+              duration: 1000,
+              success: res => {
+              }
+            })
+            setTimeout(function () {
+              wx.navigateBack({
 
-          })
-        }, 1000)
+              })
+            }, 1000)
+          }, 50
+        )
       }
     })
   },

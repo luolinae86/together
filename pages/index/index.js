@@ -28,14 +28,20 @@ Page({
   
   onLoad: function () {
     var that = this;
+
+    var userId = getApp().globalData.userId;
     //先注册账号信息
     wx.login({
       success:res=>{
         var code = res.code;
+        var datat = {
+          code: code
+        };
+        if(userId){
+          data.pc_id = userId
+        }
         mnRequest.register({
-          data:{
-            code:code
-          },
+          data:data,
           success:res=>{
             var account = res.customer;
             that.setData({
@@ -66,8 +72,7 @@ Page({
 
     //初始化alert位置坐标
     this.mapCtx = wx.createMapContext("myMap")
-    
-    this.msg_show()
+
 
     //获取位置坐标去刷新数据
     manager.checkWxAuth({
@@ -258,23 +263,16 @@ Page({
 
         if (res.scale == 16){
           this.setData({
-            latitude: marker.latitude + 0.00600,
+            latitude: marker.latitude + 0.00300,
             longitude: marker.longitude,
-            scale: 15
+            scale: 16
           })
           setTimeout(function () {
+            that.msg_show();
             that.setData({
               is_show_point_msg: true
             })
-          }, 800)
-          // that.mapCtx.moveToLocation({
-          //   latitude: marker.latitude + 0.00600,
-          //   longitude: marker.longitude,
-          //   success: res => {
-              
-
-          //   }
-          // })
+          }, 300)
         } else{
           this.setData({
             latitude: marker.latitude + 0.00300,
@@ -282,6 +280,7 @@ Page({
             scale: 16
           })
           setTimeout(function () {
+            that.msg_show();
             that.setData({
               is_show_point_msg: true
             })
@@ -315,7 +314,7 @@ Page({
             log.log(res.windowHeight)
             log.log(dis)
             log.log(dis2)
-            var bottom = 166 + (((2 * res.windowHeight - 212 - 166) / dis) * dis2) + 50;
+            var bottom = 186 + (((2 * res.windowHeight - 212 - 166) / dis) * dis2) + 50;
             var arrBottom = bottom - 20;
             log.log(bottom)
             that.setData({
