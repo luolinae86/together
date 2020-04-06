@@ -171,7 +171,7 @@ Page({
                   fail: res => {
                     wx.showModal({
                       title: '提示',
-                      content: '提交失败，请重试',
+                      content: '请勿发布公益互助无关的信息！！',
                       showCancel: false
                     })
                   }
