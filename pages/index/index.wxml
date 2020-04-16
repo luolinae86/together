@@ -127,7 +127,7 @@
 
     </view>
     <view class="tab2-intro flex_center_center">
-      <text>xxx公司提供技术支持</text>
+      <text>同舟共济   风雨共担 \nTogether Today</text>
     </view>
   </scroll-view>
 </block>

@@ -8,8 +8,8 @@ const app = getApp()
 
 Page({
   data: {
-    latitude: 51.504852,
-    longitude: 0.049596,
+    latitude: 51.506542176314000,
+    longitude: -0.087584414178080,
     markers:[],
     results:[],
     scale: 16,
@@ -361,12 +361,12 @@ Page({
     }
     /*
     * Yuhua 2020-04-01 移除 手机信息授权
-    **/
+  
     if(!account.phone || account.phone.length <= 0){
       //授权手机信息
       return;
     }
-    
+      **/
 
     wx.navigateTo({
       url: '../list/list?idx=' + e.currentTarget.dataset.idx,
